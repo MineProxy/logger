@@ -1,0 +1,19 @@
+{
+  "name": "@mineproxy/logger",
+  "version": "1.0.0",
+  "description": "Logger plugin for MineProxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MineProxy/logger.git"
+  },
+  "author": "Bjornskjald <github@bjorn.ml> (https://bjorn.ml/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MineProxy/logger/issues"
+  },
+  "homepage": "https://github.com/MineProxy/logger#readme"
+}
