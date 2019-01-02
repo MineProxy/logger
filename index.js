@@ -23,8 +23,8 @@ module.exports = {
     }
 
     function shouldDump (name) {
-      if (this.proxy.config.dump_all && (!Array.isArray(this.proxy.config.dump_blacklist) || !this.proxy.config.dump_blacklist.includes(name))) return true
-      if (Array.isArray(this.proxy.config.dump) && this.proxy.config.dump.includes(name)) return true
+      if (config.dump_all && (!Array.isArray(config.dump_blacklist) || !config.dump_blacklist.includes(name))) return true
+      if (Array.isArray(config.dump) && config.dump.includes(name)) return true
       return false
     }
   }
