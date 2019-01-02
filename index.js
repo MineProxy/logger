@@ -16,7 +16,7 @@ module.exports = {
     function dump (meta, data, isIncoming) {
       if (shouldDump(meta.name)) {
         const prefix = `C${isIncoming ? '<-' : '->'}S: ${meta.name}: `
-        const packet = inspect(data, { depth: Infinity })
+        const packet = inspect(data, { depth: Infinity, colors: true })
         console.log(packet.split('\n').map(line => prefix + line).join('\n'))
       }
       return true
