@@ -9,7 +9,7 @@ module.exports = {
   },
   init: proxy => {
     const { config: { logger: config } } = proxy
-    console.log(`Dump: ${config.dump_all ? `all except ${config.dump_blacklist.join(', ')}` : config.dump.join(', ')}`)
+    proxy.log(`Dump: ${config.dump_all ? `all except ${config.dump_blacklist.join(', ')}` : config.dump.join(', ')}`)
     proxy.register('serverPacket', (meta, data) => dump(meta, data, true))
     proxy.register('clientPacket', (meta, data) => dump(meta, data, false))
 
@@ -17,7 +17,7 @@ module.exports = {
       if (shouldDump(meta.name)) {
         const prefix = `C${isIncoming ? '<-' : '->'}S: ${meta.name}: `
         const packet = inspect(data, { depth: Infinity, colors: true })
-        console.log(packet.split('\n').map(line => prefix + line).join('\n'))
+        proxy.log(packet.split('\n').map(line => prefix + line).join('\n'))
       }
       return true
     }
